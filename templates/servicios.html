@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios - StreetWear Co.</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #0a0a0a;
+            color: #fff;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header h1 {
+            font-size: 28px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        nav {
+            display: flex;
+            gap: 30px;
+            margin-top: 15px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #7A8978;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #7A8978 0%, #9DAC9B  100%);
+            padding: 80px 0;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .hero h2 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            opacity: 0.9;
+        }
+
+        .section {
+            margin-bottom: 80px;
+        }
+
+        .section h3 {
+            font-size: 36px;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            border-bottom: 3px solid #7A8978;
+            padding-bottom: 15px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .service-card {
+            background: #1a1a1a;
+            padding: 30px;
+            border-left: 4px solid #7A8978;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px #9DAC9B ;
+        }
+
+        .service-card h4 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: #7A8978;
+        }
+
+        .service-card p {
+            line-height: 1.6;
+            opacity: 0.8;
+        }
+
+        .location-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .location-info h4 {
+            font-size: 20px;
+            margin: 20px 0 10px 0;
+            color: #7A8978;
+        }
+
+        .location-info p {
+            opacity: 0.8;
+            line-height: 1.8;
+        }
+
+        .map-placeholder {
+            background: #1a1a1a;
+            height: 400px;
+            border: 2px solid #7A8978;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+
+        .methodology-list {
+            list-style: none;
+        }
+
+        .methodology-list li {
+            background: #1a1a1a;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-left: 4px solid #7A8978;
+            display: flex;
+            gap: 15px;
+        }
+
+        .methodology-list li::before {
+            content: "✓";
+            color: #7A8978;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        footer {
+            background: #1a1a1a;
+            padding: 30px 0;
+            text-align: center;
+            margin-top: 60px;
+            border-top: 2px solid #7A8978;
+        }
+
+        .active {
+            color: #7A8978;
+        }
+
+        @media (max-width: 768px) {
+            .location-container {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h2 {
+                font-size: 32px;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>🎨 StreetWear Co.</h1>
+            <nav>
+                <a href="#servicios" class="nav-link active">Servicios</a>
+                <a href="#ubicacion" class="nav-link">Ubicación</a>
+                <a href="#metodologia" class="nav-link">Metodología</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="hero">
+        <div class="container">
+            <h2>Nuestros Servicios</h2>
+            <p>Diseño, Calidad y Estilo Urbano</p>
+        </div>
+    </div>
+
+    <main class="container">
+        <!-- Servicios -->
+        <section class="section" id="servicios">
+            <h3>Servicios Disponibles</h3>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h4>👕 Diseño Personalizado</h4>
+                    <p>Creamos prendas únicas adaptadas a tu estilo personal. Desde bosquejos hasta producción final, te acompañamos en cada paso.</p>
+                </div>
+                <div class="service-card">
+                    <h4>🎨 Estampados Especiales</h4>
+                    <p>Técnicas de impresión de alta calidad: DTG, screen printing y bordado. Expresión máxima en cada prenda.</p>
+                </div>
+                <div class="service-card">
+                    <h4>📦 Producción en Masa</h4>
+                    <p>Ordenes grandes con precios competitivos. Ideal para emprendimientos y marcas en crecimiento.</p>
+                </div>
+                <div class="service-card">
+                    <h4>✂️ Modificaciones y Retales</h4>
+                    <p>Ajustes, reparaciones y transformación de prendas antiguas. Dale nueva vida a tu ropa.</p>
+                </div>
+                <div class="service-card">
+                    <h4>📊 Asesoría de Marca</h4>
+                    <p>Consejos sobre tendencias, identidad visual y posicionamiento en el mercado streetwear.</p>
+                </div>
+                <div class="service-card">
+                    <h4>🚀 Entregas Rápidas</h4>
+                    <p>Proyectos expresos en 48-72 horas. Perfecto para eventos y lanzamientos urgentes.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ubicación -->
+        <section class="section" id="ubicacion">
+            <h3>📍 Ubicación</h3>
+            <div class="location-container">
+                <div class="location-info">
+                    <h4>Centro de Operaciones</h4>
+                    <p><strong>Dirección:</strong> Calle Urban 123, Barrio Creativo</p>
+                    <p><strong>Ciudad:</strong> Bogotá, Colombia</p>
+                    <p><strong>Teléfono:</strong> +57 (1) 1234-5678</p>
+                    <p><strong>Email:</strong> info@streetwearco.com</p>
+                    
+                    <h4>Horarios de Atención</h4>
+                    <p>Lunes a Viernes: 10:00 AM - 8:00 PM</p>
+                    <p>Sábado: 11:00 AM - 6:00 PM</p>
+                    <p>Domingo: Cerrado</p>
+                    
+                    <h4>Envíos</h4>
+                    <p>Realizamos envíos a nivel nacional e internacional. Consulta costos según tu ubicación.</p>
+                </div>
+                <div class="map-placeholder">
+                    📍 Integra aquí Google Maps o tu mapa preferido
+                </div>
+            </div>
+        </section>
+
+        <!-- Metodología -->
+        <section class="section" id="metodologia">
+            <h3>🔧 Nuestra Metodología</h3>
+            <ul class="methodology-list">
+                <li>
+                    <div>
+                        <strong>Consulta Inicial:</strong> Entendemos tus necesidades, presupuesto y visión de la prenda.
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <strong>Diseño y Prototipo:</strong> Creamos mockups y te mostramos opciones antes de producción.
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <strong>Selección de Materiales:</strong> Trabajamos con proveedores certificados de alta calidad.
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <strong>Producción:</strong> Usamos tecnología moderna y talento artesanal combinados.
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <strong>Control de Calidad:</strong> Revisión exhaustiva antes de empaque y envío.
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <strong>Postventa:</strong> Garantía y soporte continuo para tu satisfacción total.
+                    </div>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Distrito CERO. Todos los derechos reservados.</p>
+            <p>Síguenos en redes sociales para últimas colecciones 🔥</p>
+        </div>
+    </footer>
+
+    <script>
+        // Navegación suave
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+                link.classList.add('active');
+                
+                const target = link.getAttribute('href');
+                const section = document.querySelector(target);
+                section.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        // Animación de tarjetas al scroll
+        const cards = document.querySelectorAll('.service-card');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeInUp 0.6s ease forwards';
+                }
+            });
+        });
+        
+        cards.forEach(card => observer.observe(card));
+    </script>
+</body>
+</html>
