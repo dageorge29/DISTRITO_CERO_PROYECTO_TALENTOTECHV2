@@ -1,0 +1,290 @@
+/* --------- Estilo completo del Index --------- */
+
+:root {
+    --bg-primary: #070707;
+    --bg-soft: rgba(255, 255, 255, 0.04);
+    --accent: #687766;
+    --accent-soft: rgba(255, 91, 118, 0.16);
+    --accent-alt: #8B9B89;
+    --text-muted: #c8c8c8;
+    --card-border: rgba(255, 255, 255, 0.08);
+    color-scheme: dark;
+    color: #f5f5f5;
+    background: radial-gradient(circle at top left, rgba(66, 198, 255, 0.12), transparent 20%), radial-gradient(circle at bottom right, rgba(255, 91, 118, 0.12), transparent 18%), var(--bg-primary);
+    font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    min-height: 100%;
+    background: #070707;
+}
+
+body {
+    color: #f5f5f5;
+    line-height: 1.7;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+header {
+    width: min(1120px, 100%);
+    margin: 0 auto;
+    padding: 28px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.brand img {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.brand span {
+    font-size: 1rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--accent);
+}
+
+.main-nav {
+    display: flex;
+    gap: 28px;
+    font-size: 0.95rem;
+    letter-spacing: 0.08em;
+}
+
+.main-nav li {
+    list-style: none;
+}
+
+.main-nav a {
+    color: #d8d8d8;
+    transition: color 180ms ease;
+}
+
+.main-nav a:hover {
+    color: var(--accent-alt);
+    transform: translateY(-1px);
+}
+
+main {
+    width: min(1120px, 100%);
+    margin: 0 auto;
+    padding: 0 24px 80px;
+}
+
+.hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(240px, 0.8fr);
+    gap: 36px;
+    align-items: end;
+    padding: 80px 0 60px;
+    position: relative;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 34px;
+    pointer-events: none;
+    background: linear-gradient(135deg, rgba(255, 91, 118, 0.08), transparent 40%), linear-gradient(215deg, rgba(66, 198, 255, 0.08), transparent 40%);
+}
+
+.hero-copy,
+.hero-stats {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: rgba(255, 91, 118, 0.18);
+    color: #AEBEAC;
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+}
+
+.eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.28em;
+    color: #8e8e8e;
+    margin-bottom: 22px;
+    font-size: 0.78rem;
+}
+
+.hero h1 {
+    font-size: clamp(3rem, 4vw, 4.8rem);
+    line-height: 0.95;
+    max-width: 12ch;
+    margin-bottom: 24px;
+    color: #ffffff;
+}
+
+.hero p {
+    max-width: 54ch;
+    color: #c8c8c8;
+    font-size: 1rem;
+    margin-bottom: 32px;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.button {
+    padding: 16px 28px;
+    border-radius: 999px;
+    font-weight: 600;
+    transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
+}
+
+.button:hover {
+    transform: translateY(-2px);
+}
+
+.primary {
+    background: linear-gradient(135deg, #ff5b76 0%, #8c5cff 100%);
+    color: #ffffff;
+    box-shadow: 0 20px 60px rgba(255, 91, 118, 0.22);
+}
+
+.secondary {
+    border: 1px solid rgba(66, 198, 255, 0.32);
+    color: #ffffff;
+    background: rgba(66, 198, 255, 0.08);
+}
+
+.hero-stats {
+    display: grid;
+    gap: 22px;
+    padding: 32px 28px;
+    border: 1px solid var(--card-border);
+    border-radius: 32px;
+    background: rgba(255, 255, 255, 0.03);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.26);
+}
+
+.hero-stats div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.hero-stats strong {
+    font-size: 2rem;
+    letter-spacing: 0.02em;
+}
+
+.hero-stats span {
+    color: #b6b6b6;
+    font-size: 0.95rem;
+}
+
+.features {
+    display: grid;
+    gap: 24px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin-top: 24px;
+}
+
+.features article {
+    padding: 32px;
+    border: 1px solid var(--card-border);
+    border-radius: 24px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(66, 198, 255, 0.03));
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.2);
+}
+
+.features h2 {
+    margin-bottom: 16px;
+    font-size: 1.35rem;
+}
+
+.features p {
+    color: #c3c3c3;
+    line-height: 1.8;
+}
+
+.statement {
+    margin-top: 56px;
+    padding: 40px 32px;
+    border-radius: 28px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 91, 118, 0.06));
+    border: 1px solid var(--card-border);
+    box-shadow: 0 20px 55px rgba(0, 0, 0, 0.22);
+}
+
+.statement h2 {
+    font-size: 2rem;
+    margin-bottom: 18px;
+}
+
+.statement p {
+    max-width: 64ch;
+    color: #d0d0d0;
+}
+
+@media (max-width: 900px) {
+    .hero {
+        grid-template-columns: 1fr;
+    }
+
+    .features {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 560px) {
+    header {
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .main-nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero {
+        padding-top: 50px;
+    }
+
+    .hero h1 {
+        font-size: 2.7rem;
+    }
+}
+
+/* --------- Estilo completo del Index --------- */
