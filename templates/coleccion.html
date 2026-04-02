@@ -8,8 +8,19 @@
 </head>
 <body>
     <header>
-        <h1>DISTRITO CERO</h1>
-        <p class="subtitle">Colecciones Exclusivas de Streetwear Urbano</p>
+        <div class="brand">
+            <img src="../static/icon/Logo2 (1).png" alt="Logo Distrito CERO">
+            <span>Distrito CERO</span>
+        </div>
+
+        <nav>
+            <ul class="main-nav">
+                <li><a href="../templates/index.html">🏠︎</a></li>
+                <li><a href="../templates/servicios.html">Servicios</a></li>
+                <li><a href="../templates/coleccion.html">Colección</a></li>
+                <li><a href="../templates/contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
     </header>
 
     <div class="container">
@@ -32,10 +43,6 @@
             <button class="btn">Notificarme</button>
         </div>
     </div>
-
-    <footer>
-        <p>&copy; 2026 Distrito CERO. Todos los derechos reservados.</p>
-    </footer>
 
     <script>
         const activeCollections = [
@@ -98,5 +105,40 @@
         renderCollections(activeCollections, 'activeCollections', true);
         renderCollections(comingCollections, 'comingCollections', false);
     </script>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Distrito CERO</h3>
+                <p>Colecciones urbanas con fuerza visual y prendas que hablan de tu actitud.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Navegación</h3>
+                <ul>
+                    <li><a href="../templates/index.html">Inicio</a></li>
+                    <li><a href="../templates/servicios.html">Servicios</a></li>
+                    <li><a href="../templates/coleccion.html">Colección</a></li>
+                    <li><a href="../templates/contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Síguenos</h3>
+                <ul>
+                    <li><a href="https://instagram.com">Instagram</a></li>
+                    <li><a href="https://facebook.com">Facebook</a></li>
+                    <li><a href="https://twitter.com">Twitter</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <p>Email: contacto@distritocero.com</p>
+                <p>Teléfono: +57 311 222 3333</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Distrito CERO. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
 </body>
 </html>

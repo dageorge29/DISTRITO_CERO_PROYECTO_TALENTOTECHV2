@@ -63,6 +63,8 @@ header {
     height: 55px;
     border-radius: 20px;
     object-fit: cover;
+    flex-shrink: 0;
+    display: block;
 }
 
 .brand span {

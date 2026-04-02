@@ -5,25 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Servicios - Distrito CERO</title>
     <link rel="stylesheet" href="../static/css/stiloser.css">
-     <link rel="icon" href="../static/img/logo.png" type="image/png">
+    <link rel="icon" href="../static/img/logo.png" type="image/png">
 </head>
 <body>
     <header>
-        <div class="container">
-            <h1>DISTRITO CERO</h1>
-            <a href="../templates/index.html">🏠︎</a>
+        <div class="brand">
+            <img src="../static/icon/Logo2 (1).png" alt="Logo Distrito CERO">
+            <span>Distrito CERO</span>
         </div>
+        <nav>
+            <ul class="main-nav">
+                <li><a class="nav-link" href="../templates/index.html">🏠︎</a></li>
+                <li><a class="nav-link" href="../templates/coleccion.html">Colección</a></li>
+                <li><a class="nav-link" href="../templates/contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <div class="hero">
-        <div class="container">
-            <h2>Nuestros Servicios</h2>
-            <p>Diseño, Calidad y Estilo Urbano</p>
-        </div>
-    </div>
-
     <main class="container">
-        <!-- Servicios -->
+        <div class="hero">
+            <h2>Nuestros Servicios</h2>
+            <p>Diseño, calidad y estilo urbano para tu marca y tu comunidad.</p>
+        </div>
+
         <section class="section" id="servicios">
             <h3>Servicios Disponibles</h3>
             <div class="services-grid">
@@ -49,12 +53,11 @@
                 </div>
                 <div class="service-card">
                     <h4>🚀 Entregas Rápidas</h4>
-                    <p>Proyectos expresos en 48-72 horas. Perfecto para eventos y lanzamientos urgentes.</p>
+                    <p>Proyectos exprés en 48-72 horas. Perfecto para eventos y lanzamientos urgentes.</p>
                 </div>
             </div>
         </section>
 
-        <!-- Metodología -->
         <section class="section" id="metodologia">
             <h3>🔧 Nuestra Metodología</h3>
             <ul class="methodology-list">
@@ -93,37 +96,66 @@
     </main>
 
     <footer>
-        <div class="container">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Distrito CERO</h3>
+                <p>Moda urbana con actitud y color. Diseño, producción y asesoría para tus prendas.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Navegación</h3>
+                <ul>
+                    <li><a href="../templates/index.html">Inicio</a></li>
+                    <li><a href="../templates/servicios.html">Servicios</a></li>
+                    <li><a href="../templates/coleccion.html">Colección</a></li>
+                    <li><a href="../templates/contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Síguenos</h3>
+                <ul>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Twitter</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <p>Email: contacto@distritocero.com</p>
+                <p>Teléfono: +57 311 222 3333</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
             <p>&copy; 2026 Distrito CERO. Todos los derechos reservados.</p>
-            <p>Síguenos en redes sociales para últimas colecciones 🔥</p>
         </div>
     </footer>
 
     <script>
-        // Navegación suave
         document.querySelectorAll('.nav-link').forEach(link => {
             link.addEventListener('click', (e) => {
                 e.preventDefault();
                 document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
                 link.classList.add('active');
-                
+
                 const target = link.getAttribute('href');
-                const section = document.querySelector(target);
-                section.scrollIntoView({ behavior: 'smooth' });
+                window.location.href = target;
             });
         });
 
-        // Animación de tarjetas al scroll
         const cards = document.querySelectorAll('.service-card');
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.style.animation = 'fadeInUp 0.6s ease forwards';
+                    entry.target.style.transform = 'translateY(0)';
+                    entry.target.style.opacity = '1';
                 }
             });
+        }, { threshold: 0.2 });
+
+        cards.forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            observer.observe(card);
         });
-        
-        cards.forEach(card => observer.observe(card));
     </script>
 </body>
 </html>
