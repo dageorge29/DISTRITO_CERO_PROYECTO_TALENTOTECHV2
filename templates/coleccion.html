@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Colecciones - Distrito CERO</title>
     <link rel="stylesheet" href="/static/css/stilocole.css">
+    <link rel="icon" type="image/x-icon" href="../static/icon/Logo2 (1).png">
 </head>
 <body>
     <header>
@@ -15,7 +16,7 @@
 
         <nav>
             <ul class="main-nav">
-                <li><a href="../templates/index.html">🏠︎</a></li>
+                <li><a href="../templates/index.html"><img id="imgCasa" src="../static/img/image.png" alt="🏠"></a></li>
                 <li><a href="../templates/servicios.html">Servicios</a></li>
                 <li><a href="../templates/coleccion.html">Colección</a></li>
                 <li><a href="../templates/contacto.html">Contacto</a></li>
@@ -49,17 +50,20 @@
             {
                 name: "Urban Vibes",
                 description: "Camisetas oversized con diseños minimalistas. Perfecto para el día a día.",
-                emoji: "👕"
+                emoji: "👕",
+                url: "coleccion/urban_vibes.html"
             },
             {
                 name: "Night Runner",
                 description: "Buzos y chamarras reflectantes. Estilo nocturno con visibilidad total.",
-                emoji: "🏃"
+                emoji: "🏃",
+                url: "coleccion/night_runner.html"
             },
             {
                 name: "Street Kings",
                 description: "Pantalones cargo con múltiples bolsillos. Comodidad y funcionalidad.",
-                emoji: "👖"
+                emoji: "👖",
+                url: "coleccion/street_kings_detail.html"
             }
         ];
 
@@ -68,26 +72,29 @@
                 name: "Neon Pulse",
                 description: "Colección con colores neón y detalles holográficos. Disponible en 15 días.",
                 emoji: "⚡",
-                daysLeft: 15
+                daysLeft: 15,
+                url: "coleccion/proximamente/neon_pulse.html"
             },
             {
                 name: "Winter Frost",
                 description: "Abrigos premium con tecnología térmica. Lanzamiento próximo mes.",
                 emoji: "❄️",
-                daysLeft: 30
+                daysLeft: 30,
+                url: "coleccion/proximamente/winter_frost_detail.html"
             },
             {
                 name: "Limited Edition 001",
                 description: "Solo 500 piezas disponibles. Diseño colaborativo exclusivo.",
                 emoji: "👑",
-                daysLeft: 45
+                daysLeft: 45,
+                url: "coleccion/proximamente/limited_edition.html"
             }
         ];
 
         function renderCollections(data, containerId, isActive = true) {
             const container = document.getElementById(containerId);
             container.innerHTML = data.map(col => `
-                <div class="collection-card ${!isActive ? 'coming-soon' : ''}">
+                <a href="${col.url}" class="collection-card ${!isActive ? 'coming-soon' : ''}">
                     ${!isActive ? `<div class="comingsoon-text">Próximamente</div>` : ''}
                     <div class="card-image">${col.emoji}</div>
                     <div class="card-content">
@@ -97,7 +104,7 @@
                             ${isActive ? '✓ Disponible' : `⏳ En ${col.daysLeft} días`}
                         </span>
                     </div>
-                </div>
+                </a>
             `).join('');
         }
 
@@ -125,8 +132,9 @@
                 <h3>Síguenos</h3>
                 <ul>
                     <li><a href="https://instagram.com">Instagram</a></li>
+                    <li><a href="https://twitter.com">𝕏 Twitter</a></li>
                     <li><a href="https://facebook.com">Facebook</a></li>
-                    <li><a href="https://twitter.com">Twitter</a></li>
+                    
                 </ul>
             </div>
             <div class="footer-section">
@@ -139,6 +147,21 @@
             <p>&copy; 2026 Distrito CERO. Todos los derechos reservados.</p>
         </div>
     </footer>
+    <style>
+        #imgCasa {
+            width: 32px;
+            height: 32px;
+            position: relative;
+            bottom: 15%;
+            border-radius: 30px;
+        }
+    </style>
 
+    <script>
+        const notificarme = document.querySelector('.btn');
+        notificarme.addEventListener('click', () => {
+            alert('¡Gracias por suscribirte! Te mantendremos informado sobre nuestras novedades.');
+        });
+    </script>
 </body>
 </html>

@@ -255,8 +255,6 @@ header {
 }
 
 footer {
-    width: min(1120px, 100%);
-    margin: 0 auto;
     padding: 60px 24px 40px;
     background: linear-gradient(180deg, rgba(174, 190, 172, 0.08), rgba(10, 14, 9, 0.96));
     border-top: 1px solid rgba(174, 190, 172, 0.12);
