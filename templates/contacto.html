@@ -31,11 +31,11 @@
                 <h2>Información de Contacto</h2>
                 <div class="info-item">
                     <span class="info-label">📍 Ubicación</span>
-                    <span class="info-value">Tu Dirección, Ciudad</span>
+                    <span class="info-value">Carrera 7 #45-89, Bogotá, Colombia.</span>
                 </div>
                 <div class="info-item">
                     <span class="info-label">📞 Teléfono</span>
-                    <span class="info-value">+57 311 222 3333</span>
+                    <span class="info-value">+57 312 257 3460</span>
                 </div>
                 <div class="info-item">
                     <span class="info-label">✉️ Email</span>
@@ -118,20 +118,27 @@
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
+            const formData = new FormData(this);
+            const name = formData.get('name');
 
-            if(name && email && message) {
-                alert(`¡Gracias ${name}! Tu mensaje ha sido enviado. Nos contactaremos pronto.`);
-                this.reset();
-            } else {
-                alert('Por favor completa todos los campos.');
-            }
-
-            const datosUsuario = (name, email, message) => {
-                return name, email, message; 
-            };
+            // Enviar datos al backend de Flask
+            fetch('/contacto', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if(data.status === 'success') {
+                    alert(`¡Gracias ${name}! Tu mensaje ha sido guardado en la base de datos.`);
+                    this.reset();
+                } else {
+                    alert('Error: ' + data.message);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('No se pudo conectar con el servidor.');
+            });
         });
     </script>
     <style>
