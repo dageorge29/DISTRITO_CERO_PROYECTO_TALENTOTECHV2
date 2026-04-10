@@ -1,11 +1,9 @@
 # Proyecto DISTRITO_CERO
 
 ## Descripción General
-DISTRITO_CERO es un proyecto que organiza y estructura recursos estáticos y plantillas HTML para un sitio web. Este proyecto incluye hojas de estilo CSS, imágenes, íconos, scripts de JavaScript y plantillas HTML para diferentes secciones del sitio.
+DISTRITO_CERO es una aplicación web dinámica para una marca de moda urbana, reutilizada, con el enfoque de venta libre para todas las personas. Está desarrollada con **Flask** y **SQLite3**. El proyecto integra un catálogo visual de colecciones, secciones de servicios y un sistema de contacto persistente que almacena los mensajes de los usuarios en una base de datos local.
 
 ## Estructura del Proyecto
-La estructura del proyecto es la siguiente:
-
 ```
 README.md
 static/
